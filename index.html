@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Browser Calculator</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="calculator-container">
+    <main class="calculator" id="calculator" role="region" aria-label="Calculator">
+      <!-- Calculator Header -->
+      <header class="calculator-header">
+        <div class="brand">
+          <span class="brand-badge">CALCULATOR</span>
+          <span class="brand-sub">Standard</span>
+        </div>
+        <div class="decor-dots" aria-hidden="true">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+          <span class="dot violet"></span>
+        </div>
+      </header>
+
+      <!-- Display Screen (Dual Line: Expression & Current Input/Result) -->
+      <section class="calculator-display" aria-live="polite">
+        <div class="previous-operand" id="previousOperand" aria-label="Expression history"></div>
+        <div class="current-operand" id="currentOperand" aria-label="Current result">0</div>
+      </section>
+
+      <!-- Keypad with CSS Grid Alignment -->
+      <section class="calculator-keypad" id="keypad">
+        <!-- Row 1 -->
+        <button type="button" class="btn btn-action btn-clear" data-action="clear" aria-label="Clear all">C</button>
+        <button type="button" class="btn btn-action btn-delete" data-action="delete" aria-label="Backspace"><span>⌫</span></button>
+        <button type="button" class="btn btn-action btn-percentage" data-action="percentage" aria-label="Percentage">%</button>
+        <button type="button" class="btn btn-operator" data-operator="/" aria-label="Divide">÷</button>
+
+        <!-- Row 2 -->
+        <button type="button" class="btn btn-number" data-number="7">7</button>
+        <button type="button" class="btn btn-number" data-number="8">8</button>
+        <button type="button" class="btn btn-number" data-number="9">9</button>
+        <button type="button" class="btn btn-operator" data-operator="*" aria-label="Multiply">×</button>
+
+        <!-- Row 3 -->
+        <button type="button" class="btn btn-number" data-number="4">4</button>
+        <button type="button" class="btn btn-number" data-number="5">5</button>
+        <button type="button" class="btn btn-number" data-number="6">6</button>
+        <button type="button" class="btn btn-operator" data-operator="-" aria-label="Subtract">−</button>
+
+        <!-- Row 4 -->
+        <button type="button" class="btn btn-number" data-number="1">1</button>
+        <button type="button" class="btn btn-number" data-number="2">2</button>
+        <button type="button" class="btn btn-number" data-number="3">3</button>
+        <button type="button" class="btn btn-operator" data-operator="+" aria-label="Add">+</button>
+
+        <!-- Row 5 -->
+        <button type="button" class="btn btn-number btn-zero" data-number="0">0</button>
+        <button type="button" class="btn btn-number btn-decimal" data-number="." aria-label="Decimal point">.</button>
+        <button type="button" class="btn btn-equals" data-action="equals" aria-label="Calculate equals">=</button>
+      </section>
+
+      <!-- Keyboard shortcuts legend -->
+      <footer class="calculator-footer">
+        <small>Keyboard: <code>0-9</code> <code>+ - * /</code> <code>Enter</code> <code>Backspace</code> <code>Esc</code></small>
+      </footer>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
